@@ -23,6 +23,27 @@ module ShoppingListApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.autoload_paths += %W(#{config.root}/app/controllers)
+  end
+end
+
+module ShoppingListApp
+  class Application < Rails::Application
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 7.1
+
+    # Autoload /lib folder including all subdirectories
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+
+    # Autoload /models folder including all subdirectories
+    config.autoload_paths += Dir["#{config.root}/app/models/**/"]
+
+    # Autoload /controllers folder including all subdirectories
+    config.autoload_paths += Dir["#{config.root}/app/controllers/**/"]
+
+    # Autoload /mailers folder including all subdirectories
+    config.autoload_paths += Dir["#{config.root}/app/mailers/**/"]
+
+    # Autoload /jobs folder including all subdirectories
+    config.autoload_paths += Dir["#{config.root}/app/jobs/**/"]
   end
 end

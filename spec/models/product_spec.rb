@@ -1,10 +1,33 @@
-# spec/models/product_spec.rb
-require 'rails_helper'
-
 RSpec.describe Product, type: :model do
-  it 'is invalid without a name' do
-    product = Product.new(name: nil)
-    expect(product).to_not be_valid
-    expect(product.errors[:name]).to include("can't be blank")
+  describe "Product model" do
+    context 'when valid attributes are provided' do
+      it "is valid with valid attributes" do
+        product = build(:product)
+        expect(product).to be_valid
+      end
+    end
+
+    context 'when attributes are missing or invalid' do
+      it "is not valid without a name" do
+        product = build(:product, name: nil)
+        expect(product).not_to be_valid
+      end
+
+      it "is not valid without a purchase date" do
+        product = build(:product, purchase_date: nil)
+        expect(product).not_to be_valid
+      end
+
+      # Add more validations as needed
+    end
+
+    context 'when association is not valid' do
+      it "is not valid without a store section association" do
+        product = build(:product, store_section: nil)
+        expect(product).not_to be_valid
+      end
+
+      # Add more association validations as needed
+    end
   end
 end

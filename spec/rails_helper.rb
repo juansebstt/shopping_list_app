@@ -66,62 +66,18 @@ end
 
 # spec/rails_helper.rb
 
-Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
+RSpec.configure do |config|
+  config.pattern = '**/*_spec.rb'
+end
 
 require 'factory_bot_rails'
 require 'spec_helper'
 require 'rails_helper'
+
 
 # RSpec.configure do |config|
 #   config.include FactoryBot::Syntax::Methods
 # end
 
 # Add additional requires below this line. Rails is not loaded until this point!
-
-# Ensure FactoryBot methods are available
-RSpec.configure do |config|
-  config.include FactoryBot::Syntax::Methods
-
-  # Remove the incorrect DatabaseCleaner line
-  # config.include FactoryBotRails::Spec::Mixins::DatabaseCleaner
-
-  # Configure DatabaseCleaner if needed
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
-
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
-  end
-
-  # If using ActiveRecord, use the following line:
-  config.use_transactional_fixtures = true
-
-  # Additional configurations if necessary
-  config.infer_spec_type_from_file_location!
-  config.filter_rails_from_backtrace!
-end
-
-RSpec.configure do |config|
-  config.include FactoryBot::Syntax::Methods
-
-  # DatabaseCleaner configuration
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
-
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
-  end
-
-  config.use_transactional_fixtures = true
-
-  config.infer_spec_type_from_file_location!
-  config.filter_rails_from_backtrace!
-end
