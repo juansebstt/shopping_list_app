@@ -1,41 +1,53 @@
+<!-- Turbo-frame element with id "new_product_frame" -->
 <turbo-frame id="new_product_frame">
+  <!-- Container for new product form -->
   <div class="card">
+    <!-- Card header with title and close button -->
     <div class="card-header">
       <h1>New Product</h1>
       <%= link_to 'X', products_path %>
     </div>
+    <!-- Card body containing the form -->
     <div class="card-body">
+      <!-- Form for creating a new product -->
       <%= form_with model: @product, local: true do |form| %>
+        <!-- Input field for product name -->
         <div class="form-group">
           <%= form.label :name, class: "form-label" %>
           <%= form.text_field :name, class: "form-control" %>
         </div>
 
+        <!-- Input field for purchase date -->
         <div class="form-group">
           <%= form.label :purchase_date, class: "form-label" %>
           <%= form.date_field :purchase_date, class: "form-control" %>
         </div>
 
+        <!-- Input field for store name -->
         <div class="form-group">
           <%= form.label :store_name, class: "form-label" %>
           <%= form.text_field :store_name, class: "form-control" %>
         </div>
 
+        <!-- Dropdown for selecting store section -->
         <div class="form-group">
           <%= form.label :store_section_id, "Store Section", class: "form-label" %>
           <%= form.collection_select :store_section_id, StoreSection.all, :id, :name, { prompt: "Select store section" }, class: "form-control" %>
         </div>
 
+        <!-- Input field for quantity -->
         <div class="form-group">
           <%= form.label :quantity, class: "form-label" %>
           <%= form.number_field :quantity, class: "form-control" %>
         </div>
 
+        <!-- Checkbox for marking product as purchased (hidden by default) -->
         <div class="form-group" hidden>
           <%= form.label :purchased %>
           <%= form.check_box :purchased %>
         </div>
 
+        <!-- Submit button for creating the product -->
         <div class="actions">
           <%= form.submit 'Create Product', class: "btn btn-primary" %>
         </div>
