@@ -3,20 +3,25 @@
 
 SHOPPING LIST APP - SkydropX Developer Challenge
 
-```
+
 This README documents the steps necessary to get the Shopping List application up and running.
 
 ## Ruby version
 
+```
 This application is built using Ruby version 3.2.3.
+```
 
 ## System dependencies
 
 The application has the following system dependencies:
 
+```
 * Ruby (version 3.2.3)
 * Rails (version 7.1.3)
 * SQLite (version 3) for development and testing
+```
+
 
 ## Configuration
 
