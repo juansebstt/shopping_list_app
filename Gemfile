@@ -77,3 +77,7 @@ end
 
 gem 'hotwire-rails'
 gem 'byebug'
+
+group :test do
+  gem 'database_cleaner-active_record'
+end

@@ -1,12 +1,10 @@
 FactoryBot.define do
   factory :product do
     name { Faker::Commerce.product_name }
-    purchase_date { Faker::Date.backward(days: 30) }
+    purchase_date { Faker::Date.backward(days: 14) }
     store_name { Faker::Company.name }
-    store_section
     purchased { false }
-    quantity { Faker::Number.between(from: 1, to: 100) }
-
-    association :store_section
+    quantity { Faker::Number.between(from: 1, to: 20) }
+    store_section_id { FactoryBot.create(:store_section).id } # Asigna un ID de sección de tienda válido
   end
 end
