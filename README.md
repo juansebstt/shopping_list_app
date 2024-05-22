@@ -1,8 +1,9 @@
 # README
 
-```
-# Shopping List App
 
+SHOPPING LIST APP - SkydropX Developer Challenge
+
+```
 This README documents the steps necessary to get the Shopping List application up and running.
 
 ## Ruby version
