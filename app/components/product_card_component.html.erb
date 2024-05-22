@@ -1,0 +1,11 @@
+<div class="product-card" id="<%= dom_id(@product) %>">
+  <p><strong>Store Name:</strong> <%= @product.store_name %></p>
+  <p><strong>Store Section:</strong> <%= @product.store_section.name %></p>
+  <p><strong>Product:</strong> <%= @product.name %></p>
+  <p><strong>Quantity:</strong> <%= @product.quantity %></p>
+
+  <%= form_with model: @product, url: mark_as_purchased_product_path(@product), method: :patch, data: { turbo: true }, local: false do |f| %>
+    <%= f.check_box :purchased, { checked: @product.purchased, onchange: 'this.form.requestSubmit();' } %>
+    <%= f.label :purchased, "Purchased" %>
+  <% end %>
+</div>

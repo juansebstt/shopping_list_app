@@ -1,0 +1,41 @@
+<div>
+
+
+<%= form_with(model: @product, local: false) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :purchase_date %>
+    <%= form.date_select :purchase_date %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :store_name %>
+    <%= form.text_field :store_name %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :store_section_id %>
+    <%= form.number_field :store_section_id %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :purchased %>
+    <%= form.check_box :purchased %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+</div>

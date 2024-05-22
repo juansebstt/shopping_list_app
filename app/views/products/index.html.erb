@@ -1,0 +1,7 @@
+<h1>Shopping List</h1>
+<%= turbo_frame_tag "new_product_frame" do %>
+  <%= link_to 'Add product', new_product_path, class: 'add-product-button' %>
+<% end %>
+<%= turbo_frame_tag 'products_container' do %>
+ <%= render partial: 'product_groups_list', locals: {grouped_products: @grouped_products} %>
+<% end %>

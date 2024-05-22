@@ -1,0 +1,10 @@
+
+<% if @new_group %>
+    <%= turbo_stream.update "products_container" do %>
+        <%= render partial: 'product_groups_list', locals: {grouped_products: @grouped_products} %>
+    <% end %>
+<% else %>
+    <%= turbo_stream.append "products_#{@product.purchase_date.strftime('%F')}" do %>
+        <%= render ProductCardComponent.new(product: @product)%>
+    <% end %>
+<% end %>

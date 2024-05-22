@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  purchase_date: 2024-05-16 18:38:51
+  store_name: MyString
+  purchased: false
+  quantity: 1
+
+two:
+  name: MyString
+  purchase_date: 2024-05-16 18:38:51
+  store_name: MyString
+  purchased: false
+  quantity: 1

@@ -1,0 +1,9 @@
+
+<%= turbo_frame_tag "products_#{@date.strftime('%F')}" do %>
+  <div class="product-group">
+    <h2><%= @date.strftime('%A, %B %d, %Y') %></h2>
+    <% @card_products.each do |product|%>
+      <%= render ProductCardComponent.new(product:) %>
+    <% end %>
+  </div>
+<% end %>

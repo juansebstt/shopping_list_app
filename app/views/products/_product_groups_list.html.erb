@@ -1,0 +1,10 @@
+<% if @grouped_products.present? %>
+  <% @grouped_products.each do |date, products| %>
+    <%= render ProductGroupComponent.new(date: date, products: products) %>
+  <% end %>
+
+<% else %>
+  <p>No products to display</p>
+<% end %>
+
+<%= turbo_frame_tag 'products_container_end' %>
