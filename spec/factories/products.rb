@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :product do
-    name { Faker::Commerce.product_name }
+    name { Faker::Commerce.product_name.gsub(/[%$&@+|]/, '') } # Remover caracteres no permitidos
     purchase_date { Faker::Date.backward(days: 14) }
     store_name { Faker::Company.name }
     purchased { false }
