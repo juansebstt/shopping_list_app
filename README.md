@@ -80,12 +80,4 @@ The Shopping List application has the following functionalities:
 * CRUD Operations: Users can create, read, update, and delete shopping list items.
 * View Components: View Components gem is used to build different elements of the application's views.
 * Turbo Stream: Turbo Stream is integrated to update the DOM dynamically when performing actions without full page reloads.
-```
 
-This formatted version uses:
-
-* Headers (`#`) for different sections.
-* Code blocks (````bash`) for commands.
-* Bullet points (`-`) for lists.
-
-This improves readability and makes the information in your README file easier to understand and follow.
