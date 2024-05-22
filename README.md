@@ -1,8 +1,6 @@
 # README
 
-Absolutely, here's the formatted version of your README using Markdown:
-
-```markdown
+```
 # Shopping List App
 
 This README documents the steps necessary to get the Shopping List application up and running.
