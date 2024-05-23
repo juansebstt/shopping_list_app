@@ -77,7 +77,7 @@ rails assets:precompile RAILS_ENV=production
 
 The Shopping List application has the following functionalities:
 
-* CRUD Operations: Users can create, read, update, and delete shopping list items.
+* CRUD Operations: Users can create, read, update, except for deleting shopping list items.
 * View Components: View Components gem is used to build different elements of the application's views.
 * Turbo Stream: Turbo Stream is integrated to update the DOM dynamically when performing actions without full page reloads.
 
