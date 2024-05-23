@@ -1,8 +1,11 @@
+require 'rails_helper'
+
 RSpec.describe Product, type: :model do
   describe "Product model" do
     context 'when valid attributes are provided' do
       it "is valid with valid attributes" do
-        product = build(:product)
+        store_section = create(:store_section)
+        product = build(:product, store_section_id: store_section.id)
         expect(product).to be_valid
       end
     end
