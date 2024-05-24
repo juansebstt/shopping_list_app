@@ -25,7 +25,7 @@ RSpec.describe ProductsController, type: :controller do
 
   describe "GET #index" do
     it "returns a success response" do
-      product = create(:product)
+      @product = create(:product)
       get :index
       expect(response).to be_successful
       expect(assigns(:grouped_products)).not_to be_empty
