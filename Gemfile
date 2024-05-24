@@ -81,3 +81,5 @@ gem 'byebug'
 group :test do
   gem 'database_cleaner-active_record'
 end
+
+gem 'rails-controller-testing', group: :test
