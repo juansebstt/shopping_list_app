@@ -1,7 +1,7 @@
 # README
 
 
-SHOPPING LIST APP - SkydropX Developer Challenge
+SHOPPING LIST APP
 
 
 This README documents the steps necessary to get the Shopping List application up and running.
